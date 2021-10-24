@@ -7,37 +7,27 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Point p1 = new Point(1, 3, '*');
+            Point p1 = new Point(7, 4, '*');
             p1.Draw();
 
-            Point p2 = new Point(4, 5, '#');
+            Point p2 = new Point(8, 4, '*');
             p2.Draw();
 
-            Point p3 = new Point(10, 14, '%');
+            Point p3 = new Point(9, 4, '*');
             p3.Draw();
 
-            List<int> numlist = new List<int>();
-            numlist.Add(0);
-            numlist.Add(1);
-            numlist.Add(2);
+            HorizontalLine line = new HorizontalLine(5, 20 , 8, '*');
+            line.Drow();
 
-            int x = numlist[0];
-            int y = numlist[1];
-            int z = numlist[2];
+            VerticalLine line1 = new VerticalLine(8, 20, 5, '*');
+            line1.Drow();
 
-            foreach(int i in numlist)
-            {
-                Console.WriteLine(i);
-            }
 
-            numlist.Remove(0);
+            HorizontalLine line2 = new HorizontalLine(5, 20, 20, '*');
+            line2.Drow();
 
-            List<Point> plist = new List<Point>();
-            plist.Add(p1);
-            plist.Add(p2);
-            plist.Add(p3);
-            Console.WriteLine(plist[0]);
-
+            VerticalLine line3 = new VerticalLine(8, 20, 20, '*');
+            line3.Drow();
             Console.ReadLine();
         }
     }
