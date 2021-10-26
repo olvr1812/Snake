@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace Snake
 {
@@ -7,8 +8,7 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            Console.SetBufferSize(80, 25);
-
+            
             //Отрисовка рамки
             HorizontalLine upLine = new HorizontalLine(1, 77, 0, '_');
             HorizontalLine downLine = new HorizontalLine(1, 77, 24, '_');
@@ -23,8 +23,31 @@ namespace Snake
             Point p = new Point(4, 5, '*');
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
-
-            Console.ReadLine();
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
+            Thread.Sleep(300);
+            snake.Move();
         }
     }
 }
