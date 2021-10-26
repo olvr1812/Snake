@@ -7,9 +7,15 @@ namespace Snake
     class Snake : Figure
     {
 
-        public Snake(Point tail, int lenght, Derection direcrion)
+        public Snake(Point tail, int lenght, Direction direcrion)
         {
-
+            pList = new List<Point>();
+            for(int i = 0; i < lenght; i++)
+            {
+                Point p = new Point(tail);
+                p.Move(i, direcrion);
+                pList.Add(p);
+            }
         }
     }
 }

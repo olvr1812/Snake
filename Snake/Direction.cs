@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Snake
 {
-    enum Derection
+    enum Direction
     { 
        LEFT,
        RIGHT,
