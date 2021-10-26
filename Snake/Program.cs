@@ -16,18 +16,15 @@ namespace Snake
             Point p3 = new Point(9, 4, '*');
             p3.Draw();
 
-            HorizontalLine line = new HorizontalLine(5, 20 , 8, '*');
-            line.Drow();
-
-            VerticalLine line1 = new VerticalLine(8, 20, 5, '*');
-            line1.Drow();
-
-
-            HorizontalLine line2 = new HorizontalLine(5, 20, 20, '*');
-            line2.Drow();
-
-            VerticalLine line3 = new VerticalLine(8, 20, 20, '*');
-            line3.Drow();
+            HorizontalLine upLine = new HorizontalLine(6, 19 , 8, '_');
+            VerticalLine leftLine = new VerticalLine(9, 20, 5, '|');
+            HorizontalLine downLine = new HorizontalLine(6, 19, 20, '_');
+            VerticalLine rightLine = new VerticalLine(9, 20, 20, '|');
+            upLine.Drow();
+            downLine.Drow();
+            leftLine.Drow();
+            rightLine.Drow();
+            
             Console.ReadLine();
         }
     }
