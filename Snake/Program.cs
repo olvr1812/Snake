@@ -9,34 +9,36 @@ namespace Snake
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
 
             //Отрисовка рамки
-            HorizontalLine upLine = new HorizontalLine(1, 79, 1, '+');
-            HorizontalLine downLine = new HorizontalLine(1, 79, 25, '+');
-            VerticalLine leftLine = new VerticalLine(1, 25, 1, '+');
-            VerticalLine rightLine = new VerticalLine(1, 25, 79, '+');
-            upLine.Draw();
-            downLine.Draw();
-            leftLine.Draw();
-            rightLine.Draw();
+            VerticalLine vl = new VerticalLine(0, 10, 5, '%');
+            Draw(vl);
 
             //Отрисовка точки
             Point p = new Point(4, 5, '*');
-            Snake snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Draw();
+            Figure fSnake = new Snake(p, 4, Direction.RIGHT);
+            Draw(fSnake);
+            Snake snake = (Snake) fSnake;
 
-            while (true)
+            HorizontalLine hl = new HorizontalLine(0, 5, 6, '&');
+
+            List<Figure> figures = new List<Figure>();
+            figures.Add(fSnake);
+            figures.Add(vl);
+            figures.Add(hl);
+
+            foreach (var f in figures)
             {
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HandleKey(key.Key);
-                }
-                Thread.Sleep(100);
-                snake.Move();
+                f.Draw();
             }
+        }
+
+        static void Draw(Figure figure)
+        {
+            figure.Draw();
         }
     }
 }
